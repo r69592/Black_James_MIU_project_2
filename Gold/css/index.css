@@ -5,11 +5,15 @@ Created By James Black
 MIU: 1306
 
 */
+body {
+	background-color: #666;
+}
 
 #errors li {
 	color: red;
 	font-size: 16px;
 }
+
 
 
 
