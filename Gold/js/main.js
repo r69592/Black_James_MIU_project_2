@@ -251,12 +251,12 @@ window.addEventListener("DOMContentLoaded", function () {
         }
         getSelectedRadio();
         var item = {};
-        item.chore = ["Chore :", ge("chore").value];
-        item.area = ["Chore Location :", ge("area").value];
-        item.difficulty = ["difficulty :", difficultyValue];
-        item.importance = ["importance :", ge("importance").value];
-        item.choreDate = ["Chore Date :", ge("choreDate").value];
-        item.notes = ["Notes :", ge("notes").value];
+        item.chore          = ["Chore :", ge("chore").value];
+        item.area           = ["Chore Location :", ge("area").value];
+        item.difficulty     = ["difficulty :", difficultyValue];
+        item.importance     = ["importance :", ge("importance").value];
+        item.choreDate      = ["Chore Date :", ge("choreDate").value];
+        item.notes          = ["Notes :", ge("notes").value];
         localStorage.setItem(id, JSON.stringify(item));
         alert("Chore Saved!");
     }
@@ -272,7 +272,7 @@ window.addEventListener("DOMContentLoaded", function () {
             window.location.reload();
             return false;
         }
-    }
+    };
 
 
     // My array for dropdown menu.
