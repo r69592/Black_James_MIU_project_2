@@ -57,7 +57,7 @@ var json = {
     },
     "chore8": {
         "chore": ["Chore:", "Vaccum"],
-        "area": ["Area:", "beddroom"],
+        "area": ["Area:", "bedroom"],
         "difficulty": ["Difficulty:", "Easy"],
         "importance": ["Importance:", "10"],
         "choreDate": ["Chore Date:", "2013-06-05"],
@@ -65,7 +65,7 @@ var json = {
     },
     "chore9": {
         "chore": ["Chore:", "Put clothes up"],
-        "area": ["Area:", "beddroom"],
+        "area": ["Area:", "bedroom"],
         "difficulty": ["Difficulty:", "Medium"],
         "importance": ["Importance:", "5"],
         "choreDate": ["Chore Date:", "2013-06-05"],
@@ -73,7 +73,7 @@ var json = {
     },
     "chore10": {
         "chore": ["Chore:", "Make the bed"],
-        "area": ["Area:", "beddroom"],
+        "area": ["Area:", "bedroom"],
         "difficulty": ["Difficulty:", "Easy"],
         "importance": ["Importance:", "10"],
         "choreDate": ["Chore Date:", "2013-06-05"],
@@ -81,7 +81,7 @@ var json = {
     },
     "chore11": {
         "chore": ["Chore:", "Make the bed"],
-        "area": ["Area:", "beddroom"],
+        "area": ["Area:", "bedroom"],
         "difficulty": ["Difficulty:", "Easy"],
         "importance": ["Importance:", "10"],
         "choreDate": ["Chore Date:", "2013-06-06"],
@@ -89,7 +89,7 @@ var json = {
     },
     "chore12": {
         "chore": ["Chore:", "Make the bed"],
-        "area": ["Area:", "beddroom"],
+        "area": ["Area:", "bedroom"],
         "difficulty": ["Difficulty:", "Easy"],
         "importance": ["Importance:", "10"],
         "choreDate": ["Chore Date:", "2013-06-07"],
@@ -97,7 +97,7 @@ var json = {
     },
     "chore13": {
         "chore": ["Chore:", "Make the bed"],
-        "area": ["Area:", "beddroom"],
+        "area": ["Area:", "bedroom"],
         "difficulty": ["Difficulty:", "Easy"],
         "importance": ["Importance:", "10"],
         "choreDate": ["Chore Date:", "2013-06-08"],
@@ -105,7 +105,7 @@ var json = {
     },
     "chore14": {
         "chore": ["Chore:", "Make the bed"],
-        "area": ["Area:", "beddroom"],
+        "area": ["Area:", "bedroom"],
         "difficulty": ["Difficulty:", "Easy"],
         "importance": ["Importance:", "10"],
         "choreDate": ["Chore Date:", "2013-06-09"],
@@ -113,7 +113,7 @@ var json = {
     },
     "chore15": {
         "chore": ["Chore:", "Make the bed"],
-        "area": ["Area:", "beddroom"],
+        "area": ["Area:", "bedroom"],
         "difficulty": ["Difficulty:", "Easy"],
         "importance": ["Importance:", "10"],
         "choreDate": ["Chore Date:", "2013-06-10"],

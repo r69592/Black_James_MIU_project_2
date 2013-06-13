@@ -72,7 +72,9 @@ window.addEventListener("DOMContentLoaded", function () {
             alert("There is nothing to display so default data was added.");
             autoFillData();
         } else {
-            toggleControls("on");
+            //toggleControls("on");
+            var myMakeList = document.createElement("ul");
+            document.getElementById("results").appendChild(myMakeList);
             var makeDiv = document.createElement("div");
             makeDiv.setAttribute("id", "items");
             var makeList = document.createElement("ul");
@@ -274,93 +276,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     // My array for dropdown menu.
-    var myTypeArray = ["--Choose A Location--", "laundry", "kitchen", "bathroom", "living room", "beddroom", "yard"],
+    var myTypeArray = ["--Choose A Location--", "laundry", "kitchen", "bathroom", "living room", "bedroom", "yard"],
         difficultyValue,
         errMsg = ge("errors");;
     makeField();
-
-    // Search
-    var searchButton = ge("searchButton");
-
-
-    var getSearch = function () {
-        var choreType = ge("area").value;
-        var term = ge("searchTerm").value;
-
-        // Search by chore
-        if (choreType != "--Choose A Location--" && term === "") {
-            var makeList = document.createElement("ul");
-            document.getElementById("results").appendChild(makeList);
-
-            for (var i = 0, len = localStorage.length; i < len; i++) {
-                var key = localStorage.key(i);
-                var value = localStorage.getItem(key);
-                var obj = JSON.parse(value);
-                if (choreType === obj.area[1]) {
-                    var listItem = document.createElement("li");
-                    var subList = document.createElement("ul");
-                    listItem.appendChild(subList);
-                    makeList.appendChild(listItem);
-                    for (n in obj) {
-                        var finalLi = document.createElement("li");
-                        subList.appendChild(finalLi);
-                        finalLi.innerHTML = obj[n][0] + "  " + obj[n][1];
-                    }
-                }
-            }
-        }
-
-        // Search by term
-        if (choreType === "--Choose A Location--" && term != "") {
-            var makeList = document.createElement("ul");
-            document.getElementById("results").appendChild(makeList);
-            for (var i = 0, len = localStorage.length; i < len; i++) {
-                var key = localStorage.key(i);
-                var value = localStorage.getItem(key);
-                var obj = JSON.parse(value);
-                for (n in obj) {
-                    if (term === obj[n][1]) {
-                        var listItem = document.createElement("li");
-                        var subList = document.createElement("ul");
-                        listItem.appendChild(subList);
-                        makeList.appendChild(listItem);
-                        for (m in obj) {
-                            var finalLi = document.createElement("li");
-                            subList.appendChild(finalLi);
-                            finalLi.innerHTML = obj[m][0] + "  " + obj[m][1];
-                        }
-                    }
-                }
-            }
-        }
-
-        // Search by both
-        if (choreType != "--Choose A Location--" && term != "") {
-            var makeList = document.createElement("ul");
-            document.getElementById("results").appendChild(makeList);
-            for (var i = 0, len = localStorage.length; i < len; i++) {
-                var key = localStorage.key(i);
-                var value = localStorage.getItem(key);
-                var obj = JSON.parse(value);
-                for (n in obj) {
-                    if (term === obj[n][1] && choreType === obj.area[1]) {
-                        var listItem = document.createElement("li");
-                        var subList = document.createElement("ul");
-                        listItem.appendChild(subList);
-                        makeList.appendChild(listItem);
-                        for (m in obj) {
-                            var finalLi = document.createElement("li");
-                            subList.appendChild(finalLi);
-                            finalLi.innerHTML = obj[m][0] + "  " + obj[m][1];
-                        }
-                    }
-                }
-            }
-        }
-    };
-
-
-    //searchButton.addEventListener("click", getSearch);
 
 
     // Set link & Submit.    

@@ -275,7 +275,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     // My array for dropdown menu.
-    var myTypeArray = ["--Choose A Location--", "laundry", "kitchen", "bathroom", "living room", "beddroom", "yard"],
+    var myTypeArray = ["--Choose A Location--", "laundry", "kitchen", "bathroom", "living room", "bedroom", "yard"],
         difficultyValue,
         errMsg = ge("errors");;
     //makeField();
