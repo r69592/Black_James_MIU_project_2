@@ -38,12 +38,19 @@ Term  : 1306
   </head>
   <body >
     
+<div data-role="page" id="home" >    
+  <div class="ui-content-background-color" >  
     <!-- My logo header -->
-    
+    <div data-role="header" data-position="fixed" data-theme="a"> <!-- Header -->
+
+     
     <h1 id="headerLogo">
       Daily Chores
     </h1>
     
+
+    </div> <!-- Header -->  
+
     
     <!-- My CTA under my H1 -->
     
@@ -52,20 +59,22 @@ Term  : 1306
         <img id="cta1" width="100%" height="125px" src="images/ctabg.png" >
       </a>
     </div>
-      <br />
+      
     
     <!-- My search area -->
     
-    <div id="indexSearch">
+    <div id="mySearchArea">
       
-      <form action="#" method="post" id="choreForm">
-        
-        <input type="text" id="searchTerm" placeholder="Place text here" />
-        <input type="button" id="searchButton" value="Search" />
+      <form action="#" method="post" id="choreForm" >
+        <ul data-role="content" data-inset="true" data-theme="a" >
+        <li><input type="text" id="searchTerm" data-theme="c" placeholder="Place text here" /></li>
+        <li><a href="#searchResultPage"><input type="button" id="searchButton" value="Search" data-theme="b" /></a></li>
+      
+      </ul>
+
       </form>
     </div>
-    <br />
-    
+        
     <ul id="errors">
     </ul>
     <ul id="choreList">
@@ -73,28 +82,219 @@ Term  : 1306
     </ul>
     
     <!-- Search by type -->
-    <div data-role="content" data-inset="true" class="ui-content-background-color" >  
-          <ul data-role="listview" data-inset="true" data-theme="a" class="ui-listView-settings">
+    <div data-role="content" data-inset="true" data-theme="a">  
+          <ul data-role="listview" data-inset="true" data-theme="a" >
             
             <li data-role="list-divider" data-theme="a">Browse By:</li>
             
-            <li><a href="#" value="Laundry" id="searchButton1" class="choreSearch">Laundry </a></li>
+            <li data-theme="b"><a href="#resultPage" value="Laundry" id="searchButton1" class="choreSearch">Laundry </a></li>
             
-            <li><a href="#" value="Kitchen" id="searchButton2" class="choreSearch">Kitchen</a></li>
+            <li data-theme="b"><a href="#resultPage" value="Kitchen" id="searchButton2" class="choreSearch">Kitchen</a></li>
             
-            <li><a href="#" value="Bathroom" id="searchButton3" class="choreSearch">Bathroom</a></li>
+            <li data-theme="b"><a href="#resultPage" value="Bathroom" id="searchButton3" class="choreSearch">Bathroom</a></li>
             
-            <li><a href="#" value="Living Room" id="searchButton4" class="choreSearch">Living Room</a></li>
+            <li data-theme="b"><a href="#resultPage" value="Living Room" id="searchButton4" class="choreSearch">Living Room</a></li>
             
-            <li><a href="#" value="Bedroom" id="searchButton5" class="choreSearch">Bedroom</a></li>
+            <li data-theme="b"><a href="#resultPage" value="Bedroom" id="searchButton5" class="choreSearch">Bedroom</a></li>
             
-            <li><a href="#" value="Yard" id="searchButton6" class="choreSearch">Yard</a></li>
+            <li data-theme="b"><a href="#resultPage" value="Yard" id="searchButton6" class="choreSearch">Yard</a></li>
           
           </ul>
     </div>  
 
-    <div id="results">
+    <!--div id="results"-->
+
+
+       <div data-role="footer" data-position="fixed"  data-id="home" >
+
+           <div data-role="navbar" data-theme="a"> <!-- Nav -->
+            <ul>
+              <li>
+                <a href="index.html" data-icon="home" class="ui-btn-active" >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#github" data-icon="star" >
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="#about" data-icon="info" >
+                  About
+                </a>
+              </li>
+            </ul>
+        </div> <!-- Nav -->
+
+      </div>
+
+
     </div>
+  </div>   
+</div>
+      <!-- .......................................................................... -->
+
+
+
+         <!--  ..  ..  ..  ..  .. Search results page ..  ..  ..  .. ..  -->
+    
+    <div data-role="page" id="searchResultPage" data-add-back-btn="true">
+      
+      <div data-role="header" data-position="fixed">
+        <h1>
+          Search Results
+        </h1>
+        
+      </div>
+      <div data-role="content"  id="searchResults">
+        <form action="#" method="post" id="choreForm">
+
+        </form>
+        
+      </div>
+      
+      <div data-role="footer" data-position="fixed" data-id="searchResultPage">
+        
+      </div>
+      
+    </div>
+    <!-- .......................................................................... -->
+
+
+
+    
+              <!--  ..  ..  ..  ..  .. results page ..  ..  ..  .. ..  -->
+    
+    <div data-role="page" id="resultPage" data-add-back-btn="true">
+      
+      <div data-role="header" data-position="fixed">
+        <h1>
+          Search Results
+        </h1>
+        
+      </div>
+      <div data-role="content"  id="results">
+        <form action="#" method="post" id="choreForm">
+
+        </form>
+        
+      </div>
+      
+      <div data-role="footer" data-position="fixed" data-id="resultPage">
+        
+      </div>
+      
+    </div>
+    <!-- .......................................................................... -->
+
+
+
+              <!--  ..  ..  ..  ..  .. About Page ..  ..  ..  .. ..  -->
+    
+    <div data-role="page" id="about" data-add-back-btn="true">
+      
+      <div data-role="header" data-position="fixed">
+        <h1>
+          About
+        </h1>
+        
+      </div>
+      <div data-role="content"  class="ui-content-about">
+        <p>
+          Daily chores was created for the individual that has trouble trying to remember what chores they have left. When you use Daily Chores App, you can type in a discription of the the chore you need to keep up with. You can choose a location and set a date it needs to be completed.
+        </p>
+
+        <div data-role="content" data-inset="true" >  
+          <ul data-role="listview" data-inset="true" data-theme="a" >
+            
+            <li data-role="list-divider" data-theme="a">App Links</li>
+
+            <li><a href="/Users/jamesblack/Desktop/MIU/Black_James_project_2/Gold/index.html">Gold</a><p>Gold is the setting that I think will work.</p></li>
+            <li><a href="/Users/jamesblack/Desktop/MIU/Black_James_project_2/Bronze/index.html">Bronze</a><p>Bronze is what I like but don't think will work.</p></li>  
+          </ul>  
+    </div>
+      </div>
+      
+      <div data-role="footer" data-position="fixed" data-id="about">
+        <div data-role="navbar" data-theme="a">
+          <ul>
+            <li>
+              <a href="index.html" data-icon="home" >
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#github" data-icon="star" >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="#about" data-icon="info" class="ui-btn-active" >
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+    <!-- .......................................................................... -->
+
+
+
+              <!--  ..  ..  ..  ..  .. GitHub Page  ..  ..  ..  ..  ..  -->
+    
+    <div data-role="page" id="github" data-add-back-btn="true" class="ui-pageBackground-layout">
+      
+      <div data-role="header" data-position="fixed">
+        <h1>
+          GitHub Links
+        </h1>
+      </div>
+      <div data-role="content" >
+       
+
+        <div data-role="collapsible-set" data-theme="a" data-content-theme="d">
+    <div data-role="collapsible">
+        <h3>GitHub Links</h3>
+        <a href="https://github.com/r69592">Main GitHub</a>
+            <p>Main link to all of my GitHub repos.</p>
+        <a href="https://github.com/r69592/Black_James_MIU_project_2">Main GitHub</a>
+            <p>Link to my MIU week 2 repos.</p>    
+    </div>
+   
+</div>
+
+       
+        
+      </div>
+      
+      <div data-role="footer" data-position="fixed" data-id="github">
+        <div data-role="navbar" data-theme="a">
+          <ul>
+            <li>
+              <a href="index.html" data-icon="home" >
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#github" data-icon="star" class="ui-btn-active" >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="#about" data-icon="info" >
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+    <!-- .......................................................................... -->
+
     <script src="http://code.jquery.com/jquery-1.9.1.min.js">
     </script>
     <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js">

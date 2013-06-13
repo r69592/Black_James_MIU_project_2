@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-MIU   : Chore List
+MIU   : Chore List Gold
 Name  : James Black
 Term  : 1306
 -->
@@ -169,10 +169,21 @@ Term  : 1306
         </h1>
         
       </div>
-      <div data-role="content" class="ui-content-about">
+      
+        <div data-role="content"  class="ui-content-about">
         <p>
           Daily chores was created for the individual that has trouble trying to remember what chores they have left. When you use Daily Chores App, you can type in a discription of the the chore you need to keep up with. You can choose a location and set a date it needs to be completed.
         </p>
+
+        <div data-role="content" data-inset="true" >  
+          <ul data-role="listview" data-inset="true" data-theme="a" >
+            
+            <li data-role="list-divider" data-theme="a">App Links</li>
+
+            <li><a href="/Users/jamesblack/Desktop/MIU/Black_James_project_2/Gold/index.html">Gold</a><p>Gold is the setting that I think will work.</p></li>
+            <li><a href="/Users/jamesblack/Desktop/MIU/Black_James_project_2/Bronze/index.html">Bronze</a><p>Bronze is what I like but don't think will work.</p></li>  
+          </ul>  
+    </div>
         
       </div>
       
@@ -260,7 +271,7 @@ Term  : 1306
       
   <div data-role="header" data-position="fixed">
         <h1>
-          Chore List
+          Chore List Gold
         </h1>
       
       <div data-role="navbar" data-theme="a"> <!-- Nav -->
@@ -325,30 +336,29 @@ Term  : 1306
               </legend>
         <div>  
               <!-- ............... -->
-              <ul>
-                <li>
-                  Difficulty
+              
+               
                   <ul data-role="listview" data-inset="true" data-theme="a" class="ui-listView-settings">
-                    <li>
-                      <input type="radio" checked value="Easy" id="easy" name="difficulty" /><!-- ............... -->
-                      <label for="easy">
-                        Easy
-                      </label>
-                    </li>
-                    <li>
-                      <input type="radio" value="Medium" id="medium" name="difficulty" /><!-- ............... -->
-                      <label for="medium">
-                        Medium
-                      </label>
-                    </li>
-                    <li>
-                      <input type="radio" value="Hard" id="hard" name="difficulty" /><!-- ............... -->
-                      <label for="hard">
-                        hard
-                      </label>
-                    </li>
-                  </ul>
-                </li>
+                  <li data-role="list-divider" data-theme="c">Questions</li>
+              <li>
+                <input type="radio" checked value="Easy" id="easy" name="difficulty" data-theme="b" />
+                <label for="easy">
+                  Easy
+                </label>
+              </li>
+              <li>
+                <input type="radio" value="Medium" id="medium" name="difficulty" data-theme="b" />
+                <label for="medium">
+                  Medium
+                </label>
+              </li>
+              <li>
+                <input type="radio" value="Hard" id="hard" name="difficulty" data-theme="b" />
+                <label for="hard">
+                  hard
+                </label>
+              </li>
+                
               </ul>
               <!-- ............... -->
               <ul>

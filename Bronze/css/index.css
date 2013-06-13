@@ -16,38 +16,14 @@ div.ui-content-background-color {
 	color: White;
 }
 
-#errors li {
+#errors li, .errors  {
 	color: red;
 	font-size: 16px;
 }
-.ui-ctaImg {
-	width: 100%;
-	height: 100px;
-	margin-right: 0px;
-	margin-left: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	padding: 0px;
-	border: 1px solid black;
-}
-.ui-listView-settings {
 
-	margin-right: 30px;
-	margin-left: 30px;
-	margin-bottom: 20px;
-	margin-top: 0px;
-	background-color: black;
-}
-.ui-list-header {
-	font-size: 16px;
-	text-align: center;
-	margin: 0px;
-}
-.ui-pageBackground-layout {
-	width: 100%;
-	height: 100%;
-	background-color: #595c66;
-}
+
+
+
 .ui-content-about {
 	color: black;
 }

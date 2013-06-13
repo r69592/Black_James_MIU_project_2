@@ -1,129 +1,135 @@
 <!DOCTYPE html>
-<!-- MIU: Chore List Name: James Black Term: 1305 -->
+<!-- MIU: Chore List Bronze Name: James Black Term: 1305 -->
 <html>
   
   <head>
-    <!-- character set meta -->
+
+
+  <!-- character set meta -->
     <meta charset="utf-8" />
     <meta name="description" content="First to do app." />
     <meta name="keywords" content="to do, web app, mobile development" />
     <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="user-scalable=no, width=device-width" />
-    <!--Document Title -->
+    
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <!-- Mobile IE needs ClearType for smoothing fonts -->
+    <meta http-equiv="cleartype" content="on">
+    
+  <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+    <script src="js/libs/modernizr.custom.min.js">
+    </script>
+    
+  <!--Document Title -->
     <title>
       Daily Chores
     </title>
-    <!-- Link CSS -->
-    <Link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    
+  <!-- Link CSS -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    <Link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!--Link rel="stylesheet" type="text/css" href="css/search.css" /-->
+    
     
   </head>
   
   <body>
-    <div id="headerBg">
-    <h1 id="headerLogo">
-      Chore List
-    </h1>
-    <br />
-    <!-- This is my link section! -->
-    <nav>
+<div data-role="page" id="additem" >
+     <div data-role="header" data-position="fixed">
+        <h1>
+          Chore List Bronze
+        </h1>
       
-      <a href="#" id="clearStorage"           class="navLinks">
-        Clear Storage
-      </a>
-      
-      <a href="#" id="displayData"            class="navLinks">
-        | Display Data
-      </a>
-      
-      <a href="additem.html" id="addNewChore" class="navLinks" style="display: none;">
-        | New Item
-      </a>
-    </div>  
-
-    </nav>
-    <br />
-    <!-- This starts my form with all buttons,radios,selectBox,etc. -->
-    <form action="#" method="post" id="choreForm">
-      <fieldset id="fSet">
-        <legend>
-          Chore Information
-        </legend>
-        
-        <span>
-          * fields are required
-        </span>
-        
-        <ul id="errors"></ul>
-        <ul id="choreList">
-
-          <li>
-            <label for="chore">
-              * Description:
-            </label>
-            
-            <input type="text" id="chore" placeholder="Place text here" />
-          </li>
-          <br />
-          <li>
-            <label for="group" id="select">* Add Chore Type:
-            </label>
-          </li>
-        </ul>
-      </fieldset>
-      <fieldset>
-        <legend>
-          Questions
-        </legend>
-        <ul>
-          <li>
-            Difficulty
+      <div data-role="navbar" data-theme="a"> <!-- Nav -->
             <ul>
               <li>
-                <input type="radio" checked value="Easy" id="easy" name="difficulty" />
+                <a href="#" id="clearStorage"   >
+                  Clear Data
+                </a>
+              </li>
+              <li>
+                <a href="#resultPage" id="displayData" >
+                  Display Data
+                </a>
+              </li>
+              <li>
+                <a href="#additem" id="addNewChore" class="ui-btn-active"  >
+                  New Chore
+                </a>
+              </li>
+            </ul>
+      </div> <!-- Nav -->
+      
+  </div>
+<div class="ui-content-background-color" >   
+     
+    <!-- This starts my form with all buttons,radios,selectBox,etc. -->
+    <form action="#" method="post" id="choreForm">
+      
+        
+    
+      <div data-role="content" data-role="listview" data-inset="true" class="ui-listView-settings">    
+        <ul data-role="listview" data-inset="true" data-theme="a">
+          <li data-role="list-divider" data-theme="c"> Chore Information</li>
+
+          <li class="errors">* fields are required</li>
+        
+          <li id="errors"></li>
+      
+          <li>
+            <label for="chore">* Description:</label><input type="text" id="chore" placeholder="Place text here" />
+          </li>
+
+          <li>
+            <label for="group" id="select" data-theme="b">* Add Chore Type:</label>
+          </li>
+        
+     
+    
+              <li data-role="list-divider" data-theme="c">Questions</li>
+              <li>
+                <input type="radio" checked value="Easy" id="easy" name="difficulty" data-theme="b" />
                 <label for="easy">
                   Easy
                 </label>
               </li>
               <li>
-                <input type="radio" value="Medium" id="medium" name="difficulty" />
+                <input type="radio" value="Medium" id="medium" name="difficulty" data-theme="b" />
                 <label for="medium">
                   Medium
                 </label>
               </li>
               <li>
-                <input type="radio" value="Hard" id="hard" name="difficulty" />
+                <input type="radio" value="Hard" id="hard" name="difficulty" data-theme="b" />
                 <label for="hard">
                   hard
                 </label>
               </li>
-            </ul>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            Importance
-            <ul>
+            
+       
+            
+        
+              <li data-role="list-divider" data-theme="c">Importance</li>
               <li>
-                <input type="range" id="importance" min="1" max="10" value="" />
+                <input type="range" id="importance" min="1" max="10" value="" data-theme="b" />
               </li>
-            </ul>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            Completion Date
-            <ul>
+        
+
+          <li data-role="list-divider" data-theme="c">
+            Completion Date</li>
+           
               <li>
-                <input type="date" id="choreDate" />
+                <input type="date" id="choreDate" data-theme="a" />
               </li>
-            </ul>
-          </li>
-        </ul>
-        <ul>
+            
           <li>
             <label for="notes">
               Notes
-              <br />
+              
             </label>
             <textarea id="notes" value="" placeholder="Please enter all notes here.">
             </textarea>
@@ -131,10 +137,67 @@
           <li>
             <input type="hidden" value="true" />
           </li>
-        </ul>
-      </fieldset>
-      <input type="button" id="saveButton" value="Save" />
+       
+      <li><input type="button" id="saveButton" value="Save" data-theme="b" /></li>
     </form>
+ </ul>
+      </div>
+
+
+
+       <div data-role="footer" data-position="fixed"  data-id="additem" >
+
+           <div data-role="navbar" data-theme="a"> <!-- Nav -->
+            <ul>
+              <li>
+                <a href="index.html" data-icon="home" >
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#github" data-icon="star" >
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="#about" data-icon="info" >
+                  About
+                </a>
+              </li>
+            </ul>
+        </div> <!-- Nav -->
+    </div>    
+</div>
+</div>
+
+
+              <!--  ..  ..  ..  ..  .. results page ..  ..  ..  .. ..  -->
+    
+    <div data-role="page" id="resultPage" data-add-back-btn="true">
+      
+      <div data-role="header" data-position="fixed">
+        <h1>
+          Search Results
+        </h1>
+        
+      </div>
+      <div data-role="content"  >
+        <ul>
+                <li id="results"></li>
+                </ul>
+      </div>
+      
+      <div data-role="footer" data-position="fixed" data-id="resultPage">
+        
+      </div>
+      
+    </div>
+    <!-- .......................................................................... -->
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js">
+    </script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js">
+    </script>
     <script src="js/json.js" type="text/javascript">
     </script>
     <script src="js/main.js" type="text/javascript">

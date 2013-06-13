@@ -7,6 +7,9 @@ MIU : 1306
 window.addEventListener("DOMContentLoaded", function () {
 
 
+var radios = document.forms[0].difficulty;
+console.log(radios);
+
     // My get id function.
     function ge(x) {
         var elementId = document.getElementById(x);
@@ -150,7 +153,6 @@ window.addEventListener("DOMContentLoaded", function () {
         linksLi.appendChild(deleteLink);
 
     }
-
 
     // My edit item link function....
 

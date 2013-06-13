@@ -6,6 +6,8 @@ MIU : 1306
 */
 window.addEventListener("DOMContentLoaded", function () {
 
+var radios = document.forms[0].difficulty;
+console.log(radios);
 
     // My get id function.
     function ge(x) {
@@ -72,9 +74,7 @@ window.addEventListener("DOMContentLoaded", function () {
             alert("There is nothing to display so default data was added.");
             autoFillData();
         } else {
-            //toggleControls("on");
-            var myMakeList = document.createElement("ul");
-            document.getElementById("results").appendChild(myMakeList);
+            toggleControls("on");
             var makeDiv = document.createElement("div");
             makeDiv.setAttribute("id", "items");
             var makeList = document.createElement("ul");
@@ -251,12 +251,12 @@ window.addEventListener("DOMContentLoaded", function () {
         }
         getSelectedRadio();
         var item = {};
-        item.chore          = ["Chore :", ge("chore").value];
-        item.area           = ["Chore Location :", ge("area").value];
-        item.difficulty     = ["difficulty :", difficultyValue];
-        item.importance     = ["importance :", ge("importance").value];
-        item.choreDate      = ["Chore Date :", ge("choreDate").value];
-        item.notes          = ["Notes :", ge("notes").value];
+        item.chore = ["Chore :", ge("chore").value];
+        item.area = ["Chore Location :", ge("area").value];
+        item.difficulty = ["difficulty :", difficultyValue];
+        item.importance = ["importance :", ge("importance").value];
+        item.choreDate = ["Chore Date :", ge("choreDate").value];
+        item.notes = ["Notes :", ge("notes").value];
         localStorage.setItem(id, JSON.stringify(item));
         alert("Chore Saved!");
     }
@@ -272,14 +272,97 @@ window.addEventListener("DOMContentLoaded", function () {
             window.location.reload();
             return false;
         }
-    };
+    }
 
 
     // My array for dropdown menu.
-    var myTypeArray = ["--Choose A Location--", "laundry", "kitchen", "bathroom", "living room", "bedroom", "yard"],
+    var myTypeArray = ["--Choose A Location--", "laundry", "kitchen", "bathroom", "living room", "beddroom", "yard"],
         difficultyValue,
         errMsg = ge("errors");;
     makeField();
+
+    // Search
+    var searchButton = ge("searchButton");
+
+
+    var getSearch = function () {
+        var choreType = ge("area").value;
+        var term = ge("searchTerm").value;
+
+        // Search by chore
+        if (choreType != "--Choose A Location--" && term === "") {
+            var makeList = document.createElement("ul");
+            document.getElementById("results").appendChild(makeList);
+
+            for (var i = 0, len = localStorage.length; i < len; i++) {
+                var key = localStorage.key(i);
+                var value = localStorage.getItem(key);
+                var obj = JSON.parse(value);
+                if (choreType === obj.area[1]) {
+                    var listItem = document.createElement("li");
+                    var subList = document.createElement("ul");
+                    listItem.appendChild(subList);
+                    makeList.appendChild(listItem);
+                    for (n in obj) {
+                        var finalLi = document.createElement("li");
+                        subList.appendChild(finalLi);
+                        finalLi.innerHTML = obj[n][0] + "  " + obj[n][1];
+                    }
+                }
+            }
+        }
+
+        // Search by term
+        if (choreType === "--Choose A Location--" && term != "") {
+            var makeList = document.createElement("ul");
+            document.getElementById("results").appendChild(makeList);
+            for (var i = 0, len = localStorage.length; i < len; i++) {
+                var key = localStorage.key(i);
+                var value = localStorage.getItem(key);
+                var obj = JSON.parse(value);
+                for (n in obj) {
+                    if (term === obj[n][1]) {
+                        var listItem = document.createElement("li");
+                        var subList = document.createElement("ul");
+                        listItem.appendChild(subList);
+                        makeList.appendChild(listItem);
+                        for (m in obj) {
+                            var finalLi = document.createElement("li");
+                            subList.appendChild(finalLi);
+                            finalLi.innerHTML = obj[m][0] + "  " + obj[m][1];
+                        }
+                    }
+                }
+            }
+        }
+
+        // Search by both
+        if (choreType != "--Choose A Location--" && term != "") {
+            var makeList = document.createElement("ul");
+            document.getElementById("results").appendChild(makeList);
+            for (var i = 0, len = localStorage.length; i < len; i++) {
+                var key = localStorage.key(i);
+                var value = localStorage.getItem(key);
+                var obj = JSON.parse(value);
+                for (n in obj) {
+                    if (term === obj[n][1] && choreType === obj.area[1]) {
+                        var listItem = document.createElement("li");
+                        var subList = document.createElement("ul");
+                        listItem.appendChild(subList);
+                        makeList.appendChild(listItem);
+                        for (m in obj) {
+                            var finalLi = document.createElement("li");
+                            subList.appendChild(finalLi);
+                            finalLi.innerHTML = obj[m][0] + "  " + obj[m][1];
+                        }
+                    }
+                }
+            }
+        }
+    };
+
+
+    //searchButton.addEventListener("click", getSearch);
 
 
     // Set link & Submit.    
