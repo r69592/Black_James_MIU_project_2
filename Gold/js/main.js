@@ -6,6 +6,8 @@ MIU : 1306
 */
 window.addEventListener("DOMContentLoaded", function () {
 
+autoFillData();
+
 var radios = document.forms[0].difficulty;
 console.log(radios);
 
@@ -43,17 +45,19 @@ console.log(radios);
 
     function makeField() {
         var formTag = ge("form"),
-            selectLi = ge("select"),
-            makeSelect = document.createElement("select");
+        selectLi = ge("select"),
+        makeSelect = document.createElement("select");
         makeSelect.setAttribute("id", "area");
-        for (var i = 0, j = myTypeArray.length; i < j; i++) {
-            var makeOption = document.createElement("option");
-            var optText = myTypeArray[i];
-            makeOption.setAttribute("value", optText);
-            makeOption.innerHTML = optText;
-            makeSelect.appendChild(makeOption);
-        }
-        selectLi.appendChild(makeSelect);
+        makeSelect.setAttribute("class", "required");
+        makeSelect.setAttribute("data-native-menu", "false");
+            for (var i = 0, j = myTypeArray.length; i < j; i++) {
+                var makeOption = document.createElement("option");
+                var optText = myTypeArray[i];
+                makeOption.setAttribute("value", optText);
+                makeOption.innerHTML = optText;
+                makeSelect.appendChild(makeOption);
+            }
+            selectLi.appendChild(makeSelect);
     }
 
     // Get radio answer function.         
